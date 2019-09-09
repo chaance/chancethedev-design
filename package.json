@@ -1,0 +1,206 @@
+{
+  "name": "@chancethedev/design",
+  "private": true,
+  "version": "0.0.0",
+  "repository": "git@github.com:chancestrickland/chancethedev-design.git",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "10.x"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": []
+  },
+  "scripts": {
+    "build": "lerna run build --stream --prefix --npm-client yarn",
+    "ci-check": "chancethedev-cli ci-check",
+    "clean": "lerna run clean && lerna clean --yes && rimraf node_modules",
+    "doctoc": "doctoc --title '## Table of Contents'",
+    "format": "prettier --write '**/*.{js,md,scss,ts}' '!**/{build,es,lib,storybook,ts,umd}/**'",
+    "format:diff": "prettier --list-different '**/*.{js,md,scss,ts}' '!**/{build,es,lib,storybook,ts,umd,components}/**'",
+    "lint": "eslint packages",
+    "lint:styles": "stylelint '**/*.{css,scss}' --config ./packages/stylelint-config-elements",
+    "sync": "chancethedev-cli sync",
+    "test": "cross-env BABEL_ENV=test jest",
+    "test:e2e": "cross-env BABEL_ENV=test jest --testPathPattern=e2e --testPathIgnorePatterns='examples,/packages/components/,/packages/react/'"
+  },
+  "resolutions": {
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/plugin-proposal-class-properties": "7.4.4",
+    "@babel/plugin-proposal-export-default-from": "7.2.0",
+    "@babel/plugin-proposal-export-namespace-from": "7.2.0",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/preset-env": "7.4.4",
+    "@babel/preset-react": "7.0.0",
+    "@babel/runtime": "7.4.4",
+    "@chancedigital/browserslist-config": "1.0.4",
+    "@chancedigital/eslint-config": "4.1.0",
+    "@chancedigital/stylelint-config": "2.0.6",
+    "@chancethedev/cli": "0.0.1",
+    "@commitlint/cli": "7.5.2",
+    "@commitlint/config-conventional": "7.5.0",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "cross-env": "5.2.1",
+    "cross-spawn": "6.0.5",
+    "doctoc": "1.4.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.4.0",
+    "eslint": "6.3.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jest": "22.17.0",
+    "eslint-plugin-node": "10.0.0",
+    "fs-extra": "8.1.0",
+    "glob": "7.1.4",
+    "husky": "2.1.0",
+    "jest": "24.9.0",
+    "jest-circus": "24.9.0",
+    "jest-junit": "6.4.0",
+    "lerna": "3.16.4",
+    "lint-staged": "8.1.5",
+    "prettier": "1.18.2",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "rimraf": "2.6.3",
+    "stylelint": "10.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "header-max-length": [
+        2,
+        "always",
+        72
+      ],
+      "body-max-line-length": [
+        2,
+        "always",
+        80
+      ],
+      "scope-case": [
+        0,
+        "always",
+        "lower-case"
+      ],
+      "type-enum": [
+        2,
+        "always",
+        [
+          "build",
+          "ci",
+          "chore",
+          "docs",
+          "feat",
+          "fix",
+          "perf",
+          "refactor",
+          "revert",
+          "test"
+        ]
+      ]
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "packages/components/**/*.scss": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "@chancedigital"
+    ],
+    "rules": {
+      "strict": 0
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "stylelint": {
+    "extends": [
+      "@chancedigital/stylelint-config"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "packages/**/src/**/*.js",
+      "!packages/{bundler,cli,components,sketch}/**",
+      "!packages/**/{examples,stories}/**",
+      "!**/*-story.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "node"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ],
+    "setupFiles": [
+      "./tasks/jest/setup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testMatch": [
+      "<rootDir>/**/__tests__/**/*.js?(x)",
+      "<rootDir>/**/?(*.)(spec|test).js?(x)",
+      "<rootDir>/**/?(*-)(spec|test).js?(x)"
+    ],
+    "transform": {
+      ".+\\.(js|jsx)$": "./tasks/jest/jsTransform.js",
+      ".+\\.css$": "./tasks/jest/cssTransform.js",
+      "(?!.*\\.(js|jsx|css|json)$)": "./tasks/jest/fileTransform.js"
+    },
+    "testRunner": "jest-circus/runner",
+    "testPathIgnorePatterns": [
+      "/cjs/",
+      "/dist/",
+      "/es/",
+      "/lib/",
+      "e2e",
+      "examples",
+      "/umd/"
+    ],
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
+    ],
+    "watchPathIgnorePatterns": [
+      "/cjs/",
+      "/dist/",
+      "/es/",
+      "/examples/",
+      "/lib/",
+      "/storybook/"
+    ]
+  }
+}
