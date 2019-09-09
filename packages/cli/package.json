@@ -1,7 +1,7 @@
 {
   "name": "@chancethedev/cli",
   "description": "Task automation for working with the Chance the Developer Design System",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "license": "Apache-2.0",
   "bin": {
     "chancethedev-cli": "./bin/chancethedev-cli.js"
