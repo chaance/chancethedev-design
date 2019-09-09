@@ -15,8 +15,3 @@ global.requestAnimationFrame = function requestAnimationFrame(callback) {
   // setTimeout(callback);
   callback();
 };
-
-const enzyme = require.requireActual('enzyme');
-const Adapter = require.requireActual('enzyme-adapter-react-16');
-
-enzyme.configure({ adapter: new Adapter() });
