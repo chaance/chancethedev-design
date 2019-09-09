@@ -19,11 +19,11 @@ jobs:
       - run:
           name: Build packages
           command: yarn build
-      - run:
-          name: Run Continuous Integration checks
-          command: |
-            yarn ci-check
-            yarn lerna run ci-check
+      # - run:
+          # name: Run Continuous Integration checks
+          # command: |
+            # yarn ci-check
+            # yarn lerna run ci-check
   deploy:
     docker:
       - image: circleci/node:10.15-browsers
