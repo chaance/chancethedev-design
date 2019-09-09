@@ -1,6 +1,6 @@
 {
   "name": "@chancethedev/bundler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "repository": "https://github.com/chancestrickland/chancethedev-design/tree/master/packages/bundler",
   "bugs": "https://github.com/chancestrickland/chancethedev-design/issues",
@@ -13,7 +13,7 @@
   "dependencies": {
     "@babel/core": "7.5.5",
     "@babel/preset-env": "7.5.5",
-    "@chancethedev/cli-reporter": "0.0.1",
+    "@chancethedev/cli-reporter": "^0.0.2",
     "@commitlint/parse": "8.1.0",
     "autoprefixer": "9.6.1",
     "babel-plugin-macros": "2.6.1",

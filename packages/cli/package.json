@@ -1,7 +1,7 @@
 {
   "name": "@chancethedev/cli",
   "description": "Task automation for working with the Chance the Developer Design System",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "bin": {
     "chancethedev-cli": "./bin/chancethedev-cli.js"
@@ -17,7 +17,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@chancethedev/cli-reporter": "0.0.1",
+    "@chancethedev/cli-reporter": "^0.0.2",
     "@octokit/plugin-retry": "^2.2.0",
     "@octokit/plugin-throttling": "^2.6.0",
     "@octokit/rest": "^16.28.1",
