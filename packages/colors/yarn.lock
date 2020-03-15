@@ -645,12 +645,14 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@chancethedev/bundler@file:../bundler":
-  version "0.0.1"
+"@chancethedev/bundler@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@chancethedev/bundler/-/bundler-0.0.2.tgz#ccb885b5815f26a49651209cbbcc86990c712fb4"
+  integrity sha512-TQjknWSt+TzB+negHmTrmcYikn2E/YWefJLkll0W9rOYThWGVniHZ8Yo108yF/HMIULtXWsSPnr3mD+sT/svjg==
   dependencies:
     "@babel/core" "7.5.5"
     "@babel/preset-env" "7.5.5"
-    "@chancethedev/cli-reporter" "file:../../../../../../Library/Caches/Yarn/v4/npm-@chancethedev-bundler-0.0.1-94889a84-7a4f-475d-b811-689dca13c536-1566177018317/node_modules/@chancethedev/cli-reporter"
+    "@chancethedev/cli-reporter" "^0.0.2"
     "@commitlint/parse" "8.1.0"
     autoprefixer "9.6.1"
     babel-plugin-macros "2.6.1"
@@ -678,18 +680,24 @@
     sassdoc "2.7.0"
     semver "6.3.0"
 
-"@chancethedev/cli-reporter@file:../cli-reporter":
-  version "0.0.1"
+"@chancethedev/cli-reporter@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@chancethedev/cli-reporter/-/cli-reporter-0.0.2.tgz#d734b916dfcc80cd01b86b5bbcb9e0a77df9b2ff"
+  integrity sha512-mMROP+/7IWNhKaWlIWdGpQ7srSuQZWbyMEcflTb7/tFzJVEnN/j0qStENgLZPcMbSv4ODuLCQGkVvseKuxEjBA==
   dependencies:
     chalk "2.4.2"
 
-"@chancethedev/scss-generator@file:../scss-generator":
-  version "0.0.1"
+"@chancethedev/scss-generator@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@chancethedev/scss-generator/-/scss-generator-0.0.2.tgz#f7d71083a786c6c9a1cd34627cd1b10ad49d12ef"
+  integrity sha512-PAp/fq9y8n+Q7B1BIkpS0nIRPBX1JTUaqdBBw5wfK1xj2dJogwBSm3jcXPYlYpXRI8UMEFtTG1DnXv1bj5O3mQ==
   dependencies:
     prettier "1.18.2"
 
-"@chancethedev/test-utils@file:../test-utils":
-  version "0.0.1"
+"@chancethedev/test-utils@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@chancethedev/test-utils/-/test-utils-0.0.2.tgz#2e3f71b41dea0ee5636a8f142f73f3b70df270b0"
+  integrity sha512-K0lYwN4Iwnz6q0JIZ+hDhNttFdMHu4GW6bT+SPThP79Z9pgKFBL/gxURc33kaa3miiN3IGWh7lYrGNgUEvGlUQ==
 
 "@commitlint/parse@8.1.0":
   version "8.1.0"
@@ -741,9 +749,9 @@ abbrev@1:
   integrity sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q==
 
 acorn@^6.2.1:
-  version "6.3.0"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.3.0.tgz#0087509119ffa4fc0a0041d1e93a417e68cb856e"
-  integrity sha512-/czfa8BwS88b9gWQVhc8eknunSA2DoJpJyTQkhheIf5E48u1N0R4q/YxxsAeqRrmK9TQ/uYfgLDfZo91UlANIA==
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
+  integrity sha512-ZVA9k326Nwrj3Cj9jlh3wGFutC2ZornPNARZwsNYqQYgN0EsV2d53w5RN/co65Ohn4sUAUtb1rSUAOD6XN9idA==
 
 ajv@^6.5.5:
   version "6.10.2"
