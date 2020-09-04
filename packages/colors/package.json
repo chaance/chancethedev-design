@@ -27,7 +27,7 @@
     "change-case": "3.1.0",
     "core-js": "3.2.1",
     "fs-extra": "8.1.0",
-    "node-sass": "4.12.0",
+    "node-sass": "4.13.1",
     "rimraf": "3.0.0"
   },
   "eyeglass": {
